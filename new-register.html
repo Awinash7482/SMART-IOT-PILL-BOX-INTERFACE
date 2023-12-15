@@ -223,7 +223,8 @@ h4{
         <div class="popup-1">
         <h5>Are you sure you want save this data and go to set time</h5>   
         <button id="bt-1">No</button>
-       <a href="/smart-iot-pill-box/newone"><button id="bt-2">Yes</button></a>
+	<button id="bt-2">Yes</button>	
+<!--        <a href="/smart-iot-pill-box/newone"><button id="bt-2">Yes</button></a> -->
         </div>  
    </div>
 
@@ -330,11 +331,17 @@ h4{
         printdetailsagain();
         popupel2.style.display="none"
    }
+ function  goto(){
+    // Redirect to another page
+     window.location.replace('https://awinash7482.github.io/smart-iot-pill-box/newone');
+
+   }
+	 	 
     
     const btnn=document.querySelectorAll('button');
     
     btnn[0].addEventListener("click",singupno); 
-    // btnn[1].addEventListener("click",remove_delete_popup); 
+    btnn[1].addEventListener("click",goto); 
     btnn[2].addEventListener("click",remove_delete_popup); 
     btnn[3].addEventListener("click",deletedetailsyes); 
     btnn[4].addEventListener("click", deletedetails); 
