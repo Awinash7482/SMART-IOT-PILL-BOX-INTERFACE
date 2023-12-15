@@ -1,0 +1,336 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <style>
+       body {
+    /* background: linear-gradient(to right, #0f2027, #203a43, #2c5364); */
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+#form {
+    width: 300px;
+    height:400px ;
+    /* margin: 15vh auto 0 auto; */
+    margin-right: 10px;
+    padding: 20px;
+    /* background-color: whitesmoke; */
+    background-color: #fff;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    font-size: 12px;
+    
+}
+#form2{
+    width: 300px;
+    height:400px ;
+    /* margin: 15vh auto 0 auto; */
+     /* margin-right: 100px; */
+    margin-left: 10px;
+    padding: 20px;
+    /* background-color: whitesmoke; */
+    background-color: #fff;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    font-size: 12px;
+   
+
+}
+.details{
+    margin-top: 50px;
+}
+
+
+#form h1 {
+    color: #0f2027;
+    text-align: center;
+}
+
+ #form2 button {
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    color: white;
+    /* background-color: rgb(41, 57, 194); */
+    background: black;
+    border: none;
+    border-radius: 4px;
+}
+#form button {
+    padding: 10px;
+    margin-top: 118px;
+    width: 100%;
+    color: white;
+    /* background-color: rgb(41, 57, 194); */
+    background: black;
+    border: none;
+    border-radius: 4px;
+}
+
+.input-control {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-control input {
+    border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-size: 12px;
+	padding: 10px;
+	width: 100%;
+}
+
+.input-control input:focus {
+    outline: 0;
+}
+
+.input-control.success input {
+    border-color: #09c372;
+}
+
+.input-control.error input {
+    border-color: #ff3860;
+}
+
+.input-control .error {
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
+}
+h4{
+    letter-spacing: 0.4px;
+}
+
+/* for-popup-window-css */
+
+.popup-1-container,.popup-2-container{
+           /* display:flex;
+           align-items: center;
+           justify-content: center;
+           margin-top: 100px;
+           display:none; */
+           position: fixed;
+           top: 0;
+           left: 0;
+           height: 100vh;
+           width: 100%;
+           display: none;
+
+        }
+     
+        .popup-1,.popup-2{
+            height: 150px;
+            width: 300px;
+            background-color: #fff;   
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 20px;
+            border-radius: 20px;
+           
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            /* animation: 1s drop; */
+
+        }
+     /* @keyframes drop {
+        0%{
+          top:-100%;
+        }
+        100%{
+                top:50%;
+
+        }
+     } */
+    
+
+        #bt-1,#bt-3{
+             padding: 5px;
+             margin-right: 5px;
+             width: 50px;
+             color: white;
+             background: black;
+             border-radius: 5px;
+             border: none;
+             outline: none;
+             cursor: pointer;
+             
+        }
+        #bt-2,#bt-4{
+             padding: 5px;
+             margin-left: 5px;
+             width: 50px;
+             color: white;
+             background: black;
+             border-radius: 5px;
+             border: none;
+             outline: none;
+             cursor: pointer;
+             
+        }
+ /* for-popup-window-css */       
+@media (width<512px){
+     .container{
+        flex-direction: column;
+     }
+     #form{
+        margin-left: 10px;
+        margin-bottom: 15px;
+        width: 90%;
+     }
+     #form2{
+        margin-right: 10px;
+        width: 90%;
+     }
+     .popup-1{
+        top: 30%;
+     }
+}
+
+
+    </style>
+    <!-- <script defer src="./index.js"></script> -->
+</head>
+<body>
+
+    <div class="popup-1-container">
+        <div class="popup-1">
+        <h5>Are you sure you want save this data and go to set time</h5>   
+        <button id="bt-1">No</button>
+       <a href="/newone.html"><button id="bt-2">Yes</button></a>
+        </div>  
+   </div>
+
+   <div class="popup-2-container">
+    <div class="popup-2">
+    <h5>Are you sure you want to delete details after deleting details the module will stop working</h5>   
+    <button id="bt-3">No</button>
+    <button id="bt-4">Yes</button>
+    </div>  
+   </div>
+
+
+    <div class="container">
+        <div id="form" >
+            <h1>Details of Patient</h1>
+
+             <div class="details">
+                <h4>NAME-</h4>
+                <h4>AGE-</h4>
+                <h4>DISEASE-</h4>
+                <h4>MEDICINE TIME(IN DAYS)-</h4>
+                <!-- <br><br><br><br><br><br><br><br> -->
+
+                <button>Delete</button>
+             </div>   
+        </div>
+        <div id="form2" >
+            <h1>Registration</h1>
+            <div class="input-control">
+                <label for="username">Name of Patient</label>
+                <input id="username" name="username" type="text">
+                <!-- <input id="username" type="text"> -->
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="email">Age of Patient</label>
+                <input id="text" name="email" type="text">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="password">Name of Disease</label>
+                <input id="password"name="password" type="text">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="password2">Number of days to take pills</label>
+                <input id="password2"name="password2" type="text">
+                <div class="error"></div>
+            </div>
+            <button type="submit">Sign Up</button>
+            <!-- <a href="/newone.html"><button type="submit">Sign Up</button></a> -->
+        </div>
+
+    </div>
+
+ <script>
+
+    
+     var names=document.querySelectorAll('input');
+     var details=document.querySelectorAll('h4');
+     var popupel=document.querySelector('.popup-1-container')
+     var popupel2=document.querySelector('.popup-2-container')
+     var mainel=document.querySelector('.container')
+
+       details[0].innerText=`NAME-${names[0].value}`;
+       details[1].innerText=`AGE-${names[1].value}`;
+       details[2].innerText=`DISEASE-${names[2].value}`;
+       details[3].innerText=`MEDICINE TIME(IN DAYS)-${names[3].value}`;
+
+    function printdetails(){
+
+       details[0].innerText=`NAME-${names[0].value}`;
+       details[1].innerText=`AGE-${names[1].value}`;
+       details[2].innerText=`DISEASE-${names[2].value}`;
+       details[3].innerText=`MEDICINE TIME(IN DAYS)-${names[3].value}`;
+       popupel.style.display="block";
+          
+    }
+    function  printdetailsagain(){
+       details[0].innerText=`NAME-${names[0].value}`;
+       details[1].innerText=`AGE-${names[1].value}`;
+       details[2].innerText=`DISEASE-${names[2].value}`;
+       details[3].innerText=`MEDICINE TIME(IN DAYS)-${names[3].value}`;
+    }
+    
+    function remove_delete_popup(){
+    //    popupel.style.display="none";
+          popupel2.style.display="none"
+        
+    }
+    function  deletedetails(){
+
+        popupel2.style.display="block";
+      
+    }
+    function singupno(){
+        popupel.style.display="none";
+    }
+   function  deletedetailsyes(){
+        names[0].value="";
+        names[1].value="";
+        names[2].value="";
+        names[3].value="";
+        printdetailsagain();
+        popupel2.style.display="none"
+   }
+    
+    const btnn=document.querySelectorAll('button');
+    
+    btnn[0].addEventListener("click",singupno); 
+    // btnn[1].addEventListener("click",remove_delete_popup); 
+    btnn[2].addEventListener("click",remove_delete_popup); 
+    btnn[3].addEventListener("click",deletedetailsyes); 
+    btnn[4].addEventListener("click", deletedetails); 
+    btnn[5].addEventListener("click", printdetails); 
+
+
+ </script>
+</body>
+</html>

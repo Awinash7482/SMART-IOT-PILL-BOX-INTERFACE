@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set-time-here</title>
+    <style>
+        /* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  margin-top: 90px;
+
+}
+ .wrapper, .content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+body{
+  padding: 0 0px;
+  min-height: 100vh;
+  /* background-image: url(/alarm-clock-time-take-medicine-260nw-464970779.webp); */
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.wrapper{
+  width: 300px;
+  padding: 30px 30px 38px;
+  background: #fff;
+  border-radius: 0px;
+  flex-direction: column;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  margin-right: 20px;
+
+  
+}
+.wrapper img{
+  max-width: 60px;
+}
+.wrapper h1{
+  font-size: 38px;
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+.wrapper .content{
+  width: 100%;
+  justify-content: space-between;
+
+}
+.content.disable{
+  cursor: no-drop;
+}
+.content .column{
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+  width: calc(100% / 3 - 5px);
+  margin-bottom: 10px;
+}
+.content.disable .column{
+  opacity: 0.6;
+  pointer-events: none;
+}
+.column select{
+  width: 100%;
+  height: 42px;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 19px;
+}
+.wrapper button{
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 17px 0;
+  margin-top: 20px;
+  border-radius: 5px;
+  background: black
+}
+nav{
+   background-color: black;
+   height: 60px;
+   width: 100%;
+   text-align: center;
+   padding: 10px;
+   box-shadow: 0 100px 50px rgba(0,0,0,0.1);
+
+}
+nav h2{
+    color: white;
+}
+input[type=text] {
+  border: 1px solid red;
+  border-radius: 25px;
+  outline: none;
+  height: 30px;
+  padding: 10px;
+  
+}
+nav h2 span{
+  color: red;
+  height: 10px;
+  width: 10px;
+
+}
+
+
+    </style>
+</head>
+<body>
+  <nav>
+  
+     <h2><span>+</span>     PLEASE TAKE YOUR MEDICINE ON TIME    <span>+</span></h2>
+  
+  
+  </nav>
+  <div class="container">
+    <div class="wrapper">
+        <!-- <img src="/clock+icon-1320184266903082404.png" alt="clock"> -->
+        <div class="fillup">
+           <input type="text" placeholder=" write medicine name">
+        </div>
+        <h1>00:00:00 PM</h1>
+        <div class="content">
+          <div class="column">
+            <select>
+              <option value="Hour" selected disabled hidden>Hour</option>
+            </select>
+          </div>
+          <div class="column">
+            <select>
+              <option value="Minute" selected disabled hidden>Minute</option>
+            </select>
+          </div>
+          <div class="column">
+            <select>
+              <option value="AM/PM" selected disabled hidden>AM/PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="content">
+          <div class="column">
+            <select>
+              <option value="Hour" selected disabled hidden>Hour</option>
+            </select>
+          </div>
+          <div class="column">
+            <select>
+              <option value="Minute" selected disabled hidden>Minute</option>
+            </select>
+          </div>
+          <div class="column">
+            <select>
+              <option value="AM/PM" selected disabled hidden>AM/PM</option>
+            </select>
+          </div>
+        </div>
+        <button>Set Alarm</button>
+      </div>
+
+      <div class="wrapper">
+        <!-- <img src="/clock+icon-1320184266903082404.png" alt="clock"> -->
+        <div class="fillup">
+          <input type="text" placeholder=" write medicine name">
+       </div>
+        <h1>00:00:00 PM</h1>
+        <div class="content">
+          <div class="column">
+            <select>
+              <option value="Hour" selected disabled hidden>Hour</option>
+            </select>
+          </div>
+          
+          <div class="column">
+            <select>
+              <option value="Minute" selected disabled hidden>Minute</option>
+            </select>
+          </div>
+          <div class="column">
+            <select>
+              <option value="AM/PM" selected disabled hidden>AM/PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="content">
+            <div class="column">
+              <select>
+                <option value="Hour" selected disabled hidden>Hour</option>
+              </select>
+            </div>
+            <div class="column">
+              <select>
+                <option value="Minute" selected disabled hidden>Minute</option>
+              </select>
+            </div>
+            <div class="column">
+              <select>
+                <option value="AM/PM" selected disabled hidden>AM/PM</option>
+              </select>
+            </div>
+          </div>
+        <button>Set Alarm</button>
+      </div>
+
+      <div class="wrapper">
+        <!-- <img src="/clock+icon-1320184266903082404.png" alt="clock"> -->
+        <div class="fillup">
+          <input type="text" placeholder=" write medicine name">
+       </div>
+        <h1>00:00:00 PM</h1>
+        <div class="content">
+          <div class="column">
+            <select>
+              <option value="Hour" selected disabled hidden>Hour</option>
+            </select>
+          </div>
+          <div class="column">
+            <select>
+              <option value="Minute" selected disabled hidden>Minute</option>
+            </select>
+          </div>
+          <div class="column">
+            <select>
+              <option value="AM/PM" selected disabled hidden>AM/PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="content">
+            <div class="column">
+              <select>
+                <option value="Hour" selected disabled hidden>Hour</option>
+              </select>
+            </div>
+            <div class="column">
+              <select>
+                <option value="Minute" selected disabled hidden>Minute</option>
+              </select>
+            </div>
+            <div class="column">
+              <select>
+                <option value="AM/PM" selected disabled hidden>AM/PM</option>
+              </select>
+            </div>
+          </div>
+        <button>Set Alarm</button>
+      </div>
+
+      <div class="wrapper">
+        <!-- <img src="/clock+icon-1320184266903082404.png" alt="clock"> -->
+        <div class="fillup">
+          <input type="text" placeholder=" write medicine name">
+       </div>
+        <h1>00:00:00 PM</h1>
+        <div class="content">
+          <div class="column">
+            <select>
+              <option value="Hour" selected disabled hidden>Hour</option>
+            </select>
+          </div>
+          <div class="column">
+            <select>
+              <option value="Minute" selected disabled hidden>Minute</option>
+            </select>
+          </div>
+          <div class="column">
+            <select>
+              <option value="AM/PM" selected disabled hidden>AM/PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="content">
+            <div class="column">
+              <select>
+                <option value="Hour" selected disabled hidden>Hour</option>
+              </select>
+            </div>
+            <div class="column">
+              <select>
+                <option value="Minute" selected disabled hidden>Minute</option>
+              </select>
+            </div>
+            <div class="column">
+              <select>
+                <option value="AM/PM" selected disabled hidden>AM/PM</option>
+              </select>
+            </div>
+          </div>
+        <button>Set Alarm</button>
+      </div>
+    </div>
+
+      <script>
+
+        
+var connection = new WebSocket('ws://'+location.hostname+':81/');
+const currentTime = document.querySelectorAll("h1"),
+content = document.querySelectorAll(".content"),
+selectMenu = document.querySelectorAll("select"),
+setAlarmBtn = document.querySelectorAll("button");
+let alarmTime1, isAlarmSet,alarmTime2,alarmTime3,alarmTime4,alarmTime5,alarmTime6,alarmTime7,alarmTime8;
+ringtone = new Audio("/ringtone.mp3");
+for (let i = 23; i >= 0; i--) {
+    i = i < 10 ? `0${i}` : i;
+    let option = `<option value="${i}">${i}</option>`;
+    selectMenu[0].firstElementChild.insertAdjacentHTML("afterend", option);
+    selectMenu[3].firstElementChild.insertAdjacentHTML("afterend", option);
+    selectMenu[6].firstElementChild.insertAdjacentHTML("afterend", option);
+    selectMenu[9].firstElementChild.insertAdjacentHTML("afterend", option);
+    selectMenu[12].firstElementChild.insertAdjacentHTML("afterend", option);
+    selectMenu[15].firstElementChild.insertAdjacentHTML("afterend", option);
+    selectMenu[18].firstElementChild.insertAdjacentHTML("afterend", option);
+    selectMenu[21].firstElementChild.insertAdjacentHTML("afterend", option);
+
+}
+for (let i = 59; i >= 0; i--) { 
+    i = i < 10 ? `0${i}` : i;
+    let option = `<option value="${i}">${i}</option>`;
+    selectMenu[1].firstElementChild.insertAdjacentHTML("afterend", option);
+    selectMenu[4].firstElementChild.insertAdjacentHTML("afterend", option);
+    selectMenu[7].firstElementChild.insertAdjacentHTML("afterend", option);
+    selectMenu[10].firstElementChild.insertAdjacentHTML("afterend", option);
+    selectMenu[13].firstElementChild.insertAdjacentHTML("afterend", option);
+    selectMenu[16].firstElementChild.insertAdjacentHTML("afterend", option);
+    selectMenu[19].firstElementChild.insertAdjacentHTML("afterend", option);
+    selectMenu[22].firstElementChild.insertAdjacentHTML("afterend", option);
+}
+for (let i = 2; i > 0; i--) {
+    let ampm = i == 1 ? "AM" : "PM";
+    let option = `<option value="${ampm}">${ampm}</option>`;
+    selectMenu[2].firstElementChild.insertAdjacentHTML("afterend", option);
+    selectMenu[5].firstElementChild.insertAdjacentHTML("afterend", option);
+    selectMenu[8].firstElementChild.insertAdjacentHTML("afterend", option);
+    selectMenu[11].firstElementChild.insertAdjacentHTML("afterend", option);
+    selectMenu[14].firstElementChild.insertAdjacentHTML("afterend", option);
+    selectMenu[17].firstElementChild.insertAdjacentHTML("afterend", option);
+    selectMenu[20].firstElementChild.insertAdjacentHTML("afterend", option);
+    selectMenu[23].firstElementChild.insertAdjacentHTML("afterend", option);
+}
+setInterval(() => {
+    let date = new Date(),
+    h = date.getHours(),
+    m = date.getMinutes(),
+    s = date.getSeconds(),
+    ampm = "AM";
+    if(h >= 12) {
+        h = h - 12;
+        ampm = "PM";
+    }
+    h = h == 0 ? h = 12 : h;
+    h = h < 10 ? "0" + h : h;
+    m = m < 10 ? "0" + m : m;
+    s = s < 10 ? "0" + s : s;
+    currentTime[0].innerText = `${h}:${m}:${s} ${ampm}`;
+    currentTime[1].innerText = `${h}:${m}:${s} ${ampm}`;
+    currentTime[2].innerText=  `${h}:${m}:${s} ${ampm}`;
+    currentTime[3].innerText=  `${h}:${m}:${s} ${ampm}`;
+    if (alarmTime1 === `${h}:${m} ${ampm}`) {
+        ringtone.play();
+        ringtone.loop = true;
+    }
+
+    if (alarmTime2 === `${h}:${m} ${ampm}`) {
+        ringtone.play();
+        ringtone.loop = true;
+    }
+    if (alarmTime3 === `${h}:${m} ${ampm}`) {
+        ringtone.play();
+        ringtone.loop = true;
+    }
+    if (alarmTime4 === `${h}:${m} ${ampm}`) {
+        ringtone.play();
+        ringtone.loop = true;
+    }
+    if (alarmTime5 === `${h}:${m} ${ampm}`) {
+        ringtone.play();
+        ringtone.loop = true;
+    }
+    if (alarmTime6 === `${h}:${m} ${ampm}`) {
+        ringtone.play();
+        ringtone.loop = true;
+    }
+    if (alarmTime7 === `${h}:${m} ${ampm}`) {
+        ringtone.play();
+        ringtone.loop = true;
+    }
+    if (alarmTime8 === `${h}:${m} ${ampm}`) {
+        ringtone.play();
+        ringtone.loop = true;
+    }
+});
+function setAlarm() {
+    
+   
+    if (isAlarmSet) {
+        alarmTime = "";
+        ringtone.pause();
+        content[0].classList.remove("disable");
+        content[1].classList.remove("disable");
+        setAlarmBtn[0].innerText = "Set Alarm";
+        return isAlarmSet = false;
+    }
+    let time = `${selectMenu[0].value}:${selectMenu[1].value} ${selectMenu[2].value}`;
+    let time1 = `${selectMenu[3].value}:${selectMenu[4].value} ${selectMenu[5].value}`;
+    if (time.includes("Hour") || time.includes("Minute") || time.includes("AM/PM")) {
+        return alert("Please, select a valid time to set Alarm!");
+    }
+  
+    alarmTime1=time;
+    alarmTime2=time1;
+    console.log("LED 1 is ON");
+    // connection.send(time); 
+    isAlarmSet = true;
+    content[0].classList.add("disable");
+    content[1].classList.add("disable");
+    setAlarmBtn[0].innerText = "Clear Alarm";
+}
+function setAlarm2() {
+ 
+    if (isAlarmSet) {
+        alarmTime2 = "";
+        ringtone.pause();
+        content[2].classList.remove("disable");
+        content[3].classList.remove("disable");
+        setAlarmBtn[1].innerText = "Set Alarm";
+        return isAlarmSet = false;
+    }
+     
+    let time2 = `${selectMenu[6].value}:${selectMenu[7].value} ${selectMenu[8].value}`;
+    let time3 = `${selectMenu[9].value}:${selectMenu[10].value} ${selectMenu[11].value}`;
+  
+    if (time2.includes("Hour") || time2.includes("Minute") || time2.includes("AM/PM")) {
+        return alert("Please, select a valid time to set Alarm!");
+    }
+  
+    alarmTime3 = time2;
+    alarmTime4=time3;
+    console.log(alarmTime3);
+    console.log(alarmTime4);
+    // connection.send(time2);
+    isAlarmSet = true;
+    content[2].classList.add("disable");
+    content[3].classList.add("disable");
+    setAlarmBtn[1].innerText = "Clear Alarm";
+}
+function setAlarm3() {
+    if (isAlarmSet) {
+        alarmTime3 = "";
+        ringtone.pause();
+        content[4].classList.remove("disable");
+        content[5].classList.remove("disable");
+        setAlarmBtn[2].innerText = "Set Alarm";
+        return isAlarmSet = false;
+    }
+    let time4 = `${selectMenu[12].value}:${selectMenu[13].value} ${selectMenu[14].value}`;
+    let time5 = `${selectMenu[15].value}:${selectMenu[16].value} ${selectMenu[17].value}`;
+    // console.log(time);
+    // console.log(typeof(time));
+    if (time4.includes("Hour") || time4.includes("Minute") || time4.includes("AM/PM")) {
+        return alert("Please, select a valid time to set Alarm!");
+    }
+    alarmTime5=time4;
+    alarmTime6=time5;
+    console.log("LED 1 is ON");
+    // connection.send(time4);
+    isAlarmSet = true;
+    content[4].classList.add("disable");
+    content[5].classList.add("disable");
+    setAlarmBtn[2].innerText = "Clear Alarm";
+}
+function setAlarm4() {
+    if (isAlarmSet) {
+        alarmTime4 = "";
+        ringtone.pause();
+        content[6].classList.remove("disable");
+        content[7].classList.remove("disable");
+        setAlarmBtn[3].innerText = "Set Alarm";
+        return isAlarmSet = false;
+    }
+    let time6 = `${selectMenu[18].value}:${selectMenu[19].value} ${selectMenu[20].value}`;
+    let time7 = `${selectMenu[21].value}:${selectMenu[22].value} ${selectMenu[23].value}`;
+    // console.log(time);
+    // console.log(typeof(time));
+
+    if (time6.includes("Hour") || time6.includes("Minute") || time6.includes("AM/PM")) {
+        return alert("Please, select a valid time to set Alarm!");
+    }
+  
+    alarmTime7 = time6;
+    alarmTime8=time7;
+    console.log("LED 1 is ON");
+    // connection.send(time6);
+    isAlarmSet = true;
+    content[6].classList.add("disable");
+    content[7].classList.add("disable");
+    setAlarmBtn[3].innerText = "Clear Alarm";
+}
+setAlarmBtn[0].addEventListener("click", setAlarm);
+setAlarmBtn[1].addEventListener("click", setAlarm2);
+setAlarmBtn[2].addEventListener("click", setAlarm3);
+setAlarmBtn[3].addEventListener("click", setAlarm4);
+      </script>
+</body>
+</html>
