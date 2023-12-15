@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>set-time-here</title>
+    <title>smart-iot-pill-box</title>
     <style>
         /* Import Google font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
@@ -55,7 +55,12 @@ body{
   font-weight: 400;
   margin: 10px 0;
 }
-
+.wrapper p{
+    font-weight: 500;
+    font-size: medium;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:red
+}
 .wrapper .content{
   width: 100%;
   justify-content: space-between;
@@ -122,6 +127,33 @@ nav h2 span{
 
 }
 
+/* css style to make it responsive */
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    margin-left: 0; /* Remove left margin */
+    margin-top: 20px; /* Adjust top margin */
+  }
+
+  .wrapper {
+    width: 100%; /* Adjust width for smaller screens */
+    margin: 0;
+    margin-bottom: 20px; /* Add some space between wrapper elements */
+    border-radius: 10px; /* Make borders smoother */
+  }
+
+}
+@media only screen and (max-width: 600px) {
+  nav h2 {
+    font-size: 18px; /* Adjust font size for smaller screens */
+    padding: 5px; /* Adjust padding */
+  }
+
+  /* Adjust span elements within the heading */
+  nav h2 span {
+    font-size: 14px; /* Adjust span font size */
+  }
+}
 
     </style>
 </head>
