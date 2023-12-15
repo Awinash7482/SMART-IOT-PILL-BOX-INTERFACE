@@ -145,7 +145,7 @@ nav h2 span{
 }
 @media only screen and (max-width: 600px) {
   nav h2 {
-    font-size: 18px; /* Adjust font size for smaller screens */
+    font-size: 16px; /* Adjust font size for smaller screens */
     padding: 5px; /* Adjust padding */
   }
 
@@ -346,7 +346,7 @@ selectMenu = document.querySelectorAll("select"),
 setAlarmBtn = document.querySelectorAll("button");
 let alarmTime1, isAlarmSet,alarmTime2,alarmTime3,alarmTime4,alarmTime5,alarmTime6,alarmTime7,alarmTime8;
 ringtone = new Audio("/ringtone.mp3");
-for (let i = 23; i >= 0; i--) {
+for (let i = 12; i >= 0; i--) {
     i = i < 10 ? `0${i}` : i;
     let option = `<option value="${i}">${i}</option>`;
     selectMenu[0].firstElementChild.insertAdjacentHTML("afterend", option);
