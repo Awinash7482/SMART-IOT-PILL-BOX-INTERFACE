@@ -17,8 +17,7 @@
 
 .container{
     display: flex;
-    justify-content: center;
-    flex-direction:column;	
+    justify-content: center;	
     align-items: center;
     margin-top: 50px;
 }
@@ -186,23 +185,32 @@ h4{
              
         }
  /* for-popup-window-css */       
-@media (width<375px){
-     .container{
-        flex-direction:row;
-     }
-     #form{
-        margin-left: 10px;
-        margin-bottom: 15px;
-        width: 90%;
-     }
-     #form2{
-        margin-right: 10px;
-        width: 90%;
-     }
-     .popup-1{
-        top: 30%;
-     }
+/* Existing styles */
+
+/* New styles for responsiveness */
+@media only screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #form,
+    #form2 {
+        width: 80%; /* Adjust width for smaller screens */
+        margin: 10px; /* Add space between elements */
+    }
+
+    .details {
+        margin-top: 20px; /* Adjust margin */
+    }
+
+    .input-control input {
+        font-size: 14px; /* Increase input font size for better readability */
+    }
 }
+
+/* Other existing styles remain unchanged */
+
 
 
     </style>
