@@ -133,7 +133,7 @@ h4{
            height: 100vh;
            width: 100%;
            display: none;
-	  z-index:2;
+           z-index: 2;
 
         }
      
@@ -151,7 +151,7 @@ h4{
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
-	    z-index:2;	
+            z-index: 2;
             /* animation: 1s drop; */
 
         }
@@ -250,7 +250,7 @@ meter {
         <div class="popup-1">
         <h5>Are you sure you want save this data and go to set time</h5>   
         <button id="bt-1">No</button>
-       <a href="awinash7482.github.io/smart-iot-pill-box/newone"><button id="bt-2">Yes</button></a>
+       <a href="/smart-iot-box/newone"><button id="bt-2">Yes</button></a>
         </div>  
    </div>
 
@@ -374,10 +374,10 @@ meter {
        details[3].innerText=`MEDICINE TIME(IN DAYS)-${names[3].value}`;
        popupel.style.display="block";
       
-       firebase.database().ref('users/' + "rrr").set({
+       firebase.database().ref('users/'+"rrr").set({
        username: names[0].value,
        email:   names[1].value,
-        profile_picture : names[2].value
+       profile_picture : names[2].value
   });
 
           
@@ -410,7 +410,7 @@ meter {
         printdetailsagain();
         popupel2.style.display="none"
    }
-    
+ 
     const btnn=document.querySelectorAll('button');
     
     btnn[0].addEventListener("click",singupno); 
