@@ -159,7 +159,10 @@ nav h2 span{
 </head>
 <body>
   <nav>
+  
      <h2><span>+</span>     PLEASE TAKE YOUR MEDICINE ON TIME    <span>+</span></h2>
+  
+  
   </nav>
   <div class="container">
     <div class="wrapper">
@@ -336,17 +339,37 @@ nav h2 span{
       </div>
     </div>
 
-      <script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+    
+    <script>
+      const firebaseApp = firebase.initializeApp({
+       apiKey: "AIzaSyC139bxBbOAeJBuDDxUuqbVphXGpU9h6Fs",
+       authDomain: "auth-form-8e4e7.firebaseapp.com",
+       databaseURL: "https://auth-form-8e4e7-default-rtdb.firebaseio.com",
+       projectId: "auth-form-8e4e7",
+       storageBucket: "auth-form-8e4e7.appspot.com",
+       messagingSenderId: "508370807230",
+       appId: "1:508370807230:web:88471fdcf5ffb8b774f1ef"
+          
 
-        
-// var connection = new WebSocket('ws://'+location.hostname+':81/');
+       });
+      const db = firebaseApp.firestore();
+      const auth = firebaseApp.auth();
+
+   </script>
+
+<script>   
+var connection = new WebSocket('ws://'+location.hostname+':81/');
 const currentTime = document.querySelectorAll("h1"),
 content = document.querySelectorAll(".content"),
 selectMenu = document.querySelectorAll("select"),
 setAlarmBtn = document.querySelectorAll("button");
 let alarmTime1, isAlarmSet,alarmTime2,alarmTime3,alarmTime4,alarmTime5,alarmTime6,alarmTime7,alarmTime8;
 ringtone = new Audio("/ringtone.mp3");
-for (let i = 12; i >= 0; i--) {
+for (let i = 23; i >= 0; i--) {
     i = i < 10 ? `0${i}` : i;
     let option = `<option value="${i}">${i}</option>`;
     selectMenu[0].firstElementChild.insertAdjacentHTML("afterend", option);
@@ -439,7 +462,7 @@ function setAlarm() {
     
    
     if (isAlarmSet) {
-        alarmTime = "";
+        // alarmTime = "";
         ringtone.pause();
         content[0].classList.remove("disable");
         content[1].classList.remove("disable");
@@ -454,6 +477,15 @@ function setAlarm() {
   
     alarmTime1=time;
     alarmTime2=time1;
+    // sending time to firebas
+    firebase.database().ref('users/'+'time').set({
+       alarmTime1: alarmTime1,
+       alarmTime2: alarmTime2,
+      
+  });
+
+        
+
     console.log("LED 1 is ON");
     // connection.send(time); 
     isAlarmSet = true;
@@ -464,7 +496,7 @@ function setAlarm() {
 function setAlarm2() {
  
     if (isAlarmSet) {
-        alarmTime2 = "";
+        // alarmTime2 = "";
         ringtone.pause();
         content[2].classList.remove("disable");
         content[3].classList.remove("disable");
@@ -481,6 +513,16 @@ function setAlarm2() {
   
     alarmTime3 = time2;
     alarmTime4=time3;
+   // sending time to firebas
+   firebase.database().ref('users/'+'time').set({
+       alarmTime1: alarmTime1,
+       alarmTime2: alarmTime2,
+       alarmTime3: alarmTime3,
+       alarmTime4: alarmTime4,
+      
+  });
+
+
     console.log(alarmTime3);
     console.log(alarmTime4);
     // connection.send(time2);
@@ -491,7 +533,7 @@ function setAlarm2() {
 }
 function setAlarm3() {
     if (isAlarmSet) {
-        alarmTime3 = "";
+        // alarmTime3 = "";
         ringtone.pause();
         content[4].classList.remove("disable");
         content[5].classList.remove("disable");
@@ -507,6 +549,18 @@ function setAlarm3() {
     }
     alarmTime5=time4;
     alarmTime6=time5;
+
+     // sending time to firebas
+   firebase.database().ref('users/'+'time').set({
+       alarmTime1: alarmTime1,
+       alarmTime2: alarmTime2,
+       alarmTime3: alarmTime3,
+       alarmTime4: alarmTime4,
+       alarmTime5: alarmTime5,
+       alarmTime6: alarmTime6,
+      
+  });
+
     console.log("LED 1 is ON");
     // connection.send(time4);
     isAlarmSet = true;
@@ -516,7 +570,7 @@ function setAlarm3() {
 }
 function setAlarm4() {
     if (isAlarmSet) {
-        alarmTime4 = "";
+        // alarmTime4 = "";
         ringtone.pause();
         content[6].classList.remove("disable");
         content[7].classList.remove("disable");
@@ -534,6 +588,19 @@ function setAlarm4() {
   
     alarmTime7 = time6;
     alarmTime8=time7;
+
+     // sending time to firebas
+   firebase.database().ref('users/'+'time').set({
+       alarmTime1: alarmTime1,
+       alarmTime2: alarmTime2,
+       alarmTime3: alarmTime3,
+       alarmTime4: alarmTime4,
+       alarmTime5: alarmTime5,
+       alarmTime6: alarmTime6,
+       alarmTime7: alarmTime7,
+       alarmTime8: alarmTime8,
+      
+  });
     console.log("LED 1 is ON");
     // connection.send(time6);
     isAlarmSet = true;
