@@ -374,10 +374,12 @@ meter {
        details[3].innerText=`MEDICINE TIME(IN DAYS)-${names[3].value}`;
        popupel.style.display="block";
       
-       firebase.database().ref('users/'+"rrr").set({
-       username: names[0].value,
-       email:   names[1].value,
-       profile_picture : names[2].value
+       firebase.database().ref('users/'+"details").set({
+       name: names[0].value,
+       age:  names[1].value,
+       disease : names[2].value,
+       noofdays:names[3].value,
+
   });
 
           
