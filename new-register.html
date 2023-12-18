@@ -17,7 +17,7 @@
 
 .container{
     display: flex;
-    justify-content: center;	
+    justify-content: center;
     align-items: center;
     margin-top: 50px;
 }
@@ -71,7 +71,7 @@
 }
 #form button {
     padding: 10px;
-    margin-top: 118px;
+    margin-top: 19px;
     width: 100%;
     color: white;
     /* background-color: rgb(41, 57, 194); */
@@ -113,7 +113,11 @@
 }
 h4{
     letter-spacing: 0.4px;
+    margin: 5px;
+     
 }
+
+
 
 /* for-popup-window-css */
 
@@ -149,15 +153,7 @@ h4{
             /* animation: 1s drop; */
 
         }
-     /* @keyframes drop {
-        0%{
-          top:-100%;
-        }
-        100%{
-                top:50%;
-
-        }
-     } */
+    
     
 
         #bt-1,#bt-3{
@@ -184,15 +180,47 @@ h4{
              cursor: pointer;
              
         }
- /* for-popup-window-css */       
-/* Existing styles */
+
+.details-pill{
+    display: flex;
+    justify-content: space-between;
+}
+.level{
+    display: flex;
+    margin-bottom: -15px;
+    gap: 5px;
+}
+        
+meter {
+      width: 50px;
+      height: 20px;
+      border: 1px solid #ccc;
+      display: block;
+      margin-top: 13px;
+    }
+
+    /* Style for the value within the meter */
+    meter::-webkit-meter-bar {
+      background: #f0f0f0;
+      border-radius: 5px;
+    }
+
+    /* Style for the meter's optimum value */
+    meter::-webkit-meter-optimum-value {
+      background: black; /* Set the color for the optimum value to black */
+      border-radius: 5px;
+    }
+    .med-time span{
+        color: #ff3860;
+    }
+   /* Existing styles */
 
 /* New styles for responsiveness */
 @media only screen and (max-width: 600px) {
     .container {
         flex-direction: column;
         align-items: center;
-	margin-top: 10px;    
+        margin-top: 10px;
     }
 
     #form,
@@ -211,9 +239,6 @@ h4{
 }
 
 /* Other existing styles remain unchanged */
-
-
-
     </style>
     <!-- <script defer src="./index.js"></script> -->
 </head>
@@ -223,8 +248,7 @@ h4{
         <div class="popup-1">
         <h5>Are you sure you want save this data and go to set time</h5>   
         <button id="bt-1">No</button>
-	<button id="bt-2">Yes</button>	
-<!--        <a href="/smart-iot-pill-box/newone"><button id="bt-2">Yes</button></a> -->
+       <a href="/newone.html"><button id="bt-2">Yes</button></a>
         </div>  
    </div>
 
@@ -239,17 +263,43 @@ h4{
 
     <div class="container">
         <div id="form" >
-            <h1>Details of patients</h1>
+            <h1>Details of Patient</h1>
 
              <div class="details">
                 <h4>NAME-</h4>
                 <h4>AGE-</h4>
                 <h4>DISEASE-</h4>
                 <h4>MEDICINE TIME(IN DAYS)-</h4>
-                <!-- <br><br><br><br><br><br><br><br> -->
-
-                <button>Delete</button>
-             </div>   
+            
+                <!-- <button>Delete</button> -->
+             </div>  
+             <div class="details-pill">
+               <div class="med-time">
+                <h5>medicine_1_time : <span>00:00</span></h5>
+                <h5>medicine_2_time : <span>00:00</span></h5>
+                <h5>medicine_3_time : <span>00:00</span></h5>
+                <h5>medicine_4_time : <span>00:00</span></h5>
+               </div>
+              <div class="med-level">
+                 <div class="level">
+                    <h5>pill_1-level</h5>
+                    <meter value="0.6" min="0" max="1"></meter>
+                 </div>
+                 <div class="level">
+                    <h5>pill_2-level</h5>
+                    <meter value="0.6" min="0" max="1"></meter>
+                 </div>
+                 <div class="level">
+                    <h5>pill_3-level</h5>
+                    <meter value="0.6" min="0" max="1"></meter>
+                 </div>
+                 <div class="level">
+                    <h5>pill_4-level</h5>
+                    <meter value="0.6" min="0" max="1"></meter>
+                 </div>
+              </div>
+             </div>
+             <button>Delete</button> 
         </div>
         <div id="form2" >
             <h1>Registration</h1>
@@ -279,6 +329,26 @@ h4{
         </div>
 
     </div>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+    <script>
+       const firebaseApp = firebase.initializeApp({
+        apiKey: "AIzaSyC139bxBbOAeJBuDDxUuqbVphXGpU9h6Fs",
+        authDomain: "auth-form-8e4e7.firebaseapp.com",
+        databaseURL: "https://auth-form-8e4e7-default-rtdb.firebaseio.com",
+        projectId: "auth-form-8e4e7",
+        storageBucket: "auth-form-8e4e7.appspot.com",
+        messagingSenderId: "508370807230",
+        appId: "1:508370807230:web:88471fdcf5ffb8b774f1ef"
+           
+
+        });
+       const db = firebaseApp.firestore();
+       const auth = firebaseApp.auth();
+
+    </script>
 
  <script>
 
@@ -301,6 +371,13 @@ h4{
        details[2].innerText=`DISEASE-${names[2].value}`;
        details[3].innerText=`MEDICINE TIME(IN DAYS)-${names[3].value}`;
        popupel.style.display="block";
+      
+       firebase.database().ref('users/' + "rrr").set({
+       username: names[0].value,
+       email:   names[1].value,
+        profile_picture : names[2].value
+  });
+
           
     }
     function  printdetailsagain(){
@@ -331,17 +408,11 @@ h4{
         printdetailsagain();
         popupel2.style.display="none"
    }
- function  goto(){
-    // Redirect to another page
-     window.location.replace('https://awinash7482.github.io/smart-iot-pill-box/newone');
-
-   }
-	 	 
     
     const btnn=document.querySelectorAll('button');
     
     btnn[0].addEventListener("click",singupno); 
-    btnn[1].addEventListener("click",goto); 
+    // btnn[1].addEventListener("click",remove_delete_popup); 
     btnn[2].addEventListener("click",remove_delete_popup); 
     btnn[3].addEventListener("click",deletedetailsyes); 
     btnn[4].addEventListener("click", deletedetails); 
